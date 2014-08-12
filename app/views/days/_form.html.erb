@@ -1,6 +1,12 @@
 <%= form_for(@day) do |f| %>
+  <%= f.label :date %>
+  <%= f.date_field :date %>
+
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
   <% if @day.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation">  
       <h2><%= pluralize(@day.errors.count, "error") %> prohibited this day from being saved:</h2>
 
       <ul>

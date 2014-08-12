@@ -1,4 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<%= link_to @day.date.to_date, day_path(@day) %> |
+<%= link_to "#{@day.title}", day_path(@day) %> |
 <%= link_to 'Edit', edit_day_path(@day) %> |
 <%= link_to 'Back', days_path %>
+
