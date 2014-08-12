@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start_time: 2014-08-11 20:54:26
+  end_time: 2014-08-11 20:54:26
+  description: MyString
+  pooped: false
+  comments: MyText
+
+two:
+  start_time: 2014-08-11 20:54:26
+  end_time: 2014-08-11 20:54:26
+  description: MyString
+  pooped: false
+  comments: MyText
