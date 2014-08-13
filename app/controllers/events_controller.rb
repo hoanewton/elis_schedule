@@ -27,19 +27,19 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
 
-    respond_to do |format|
+    # respond_to do |format|
       if @event.save
 
         day = Day.find(params[:day_id])
         day.events << @event 
-
+        redirect_to day_path(@event.day_id)
         # format.html { redirect_to @event, notice: 'Event was successfully created.' }
-        # format.json { render :show, status: :created, location: @event }
-      else
-        format.html { render :new }
-        format.json { render json: @event.errors, status: :unprocessable_entity }
+      #   # format.json { render :show, status: :created, location: @event }
+      # else
+      #   format.html { render :new }
+      #   format.json { render json: @event.errors, status: :unprocessable_entity }
       end
-    end
+    # end
   end
 
   # PATCH/PUT /events/1
@@ -60,10 +60,11 @@ class EventsController < ApplicationController
   # DELETE /events/1.json
   def destroy
     @event.destroy
-    respond_to do |format|
-      format.html { redirect_to events_url, notice: 'Event was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to day_path(@event.day_id)
+    # respond_to do |format|
+      # format.html { redirect_to events_url, notice: 'Event was successfully destroyed.' }
+      # format.json { head :no_content }
+    # end
   end
 
   private
