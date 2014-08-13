@@ -1,7 +1,16 @@
 <p id="notice"><%= notice %></p>
 
 <%= @day.date.to_date %> |
-<%= @day.title %> |
+<%= @day.title %> <br>
+
+<%= render :partial => 'events/form'  %>
+
+<% @day.events.each do |event| %>
+	<% @event = event %>
+	<%= render :partial => 'events/show' %>
+<% end %>
+
+<br>
 <%= link_to 'Edit', edit_day_path(@day) %> |
 <%= link_to 'Back', days_path %>
 

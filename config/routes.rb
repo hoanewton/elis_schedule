@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  resources :days
+  resources :days do
+    resources :events, only:[:create, :edit, :update, :destroy], :shallow => true 
+  end
 
-  resources :events
+  # resources :events
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

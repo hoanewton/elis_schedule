@@ -6,6 +6,7 @@ class CreateEvents < ActiveRecord::Migration
       t.string :description
       t.boolean :pooped
       t.text :comments
+      t.belongs_to :day
 
       t.timestamps
     end

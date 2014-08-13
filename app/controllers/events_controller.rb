@@ -14,6 +14,7 @@ class EventsController < ApplicationController
 
   # GET /events/new
   def new
+    @day = Day.find(params[:id])
     @event = Event.new
   end
 
@@ -28,8 +29,12 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       if @event.save
-        format.html { redirect_to @event, notice: 'Event was successfully created.' }
-        format.json { render :show, status: :created, location: @event }
+
+        day = Day.find(params[:day_id])
+        day.events << @event 
+
+        # format.html { redirect_to @event, notice: 'Event was successfully created.' }
+        # format.json { render :show, status: :created, location: @event }
       else
         format.html { render :new }
         format.json { render json: @event.errors, status: :unprocessable_entity }

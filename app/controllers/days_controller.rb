@@ -10,6 +10,9 @@ class DaysController < ApplicationController
   # GET /days/1
   # GET /days/1.json
   def show
+    @day = Day.find(params[:id])
+    @event = Event.new
+    @events = @day.events
   end
 
   # GET /days/new
@@ -19,6 +22,7 @@ class DaysController < ApplicationController
 
   # GET /days/1/edit
   def edit
+    @day = Day.find(params[:id])
   end
 
   # POST /days
