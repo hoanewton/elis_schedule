@@ -24,8 +24,8 @@ ActiveRecord::Schema.define(version: 20140812005748) do
   end
 
   create_table "events", force: true do |t|
-    t.datetime "start_time"
-    t.datetime "end_time"
+    t.time     "start_time"
+    t.time     "end_time"
     t.string   "description"
     t.boolean  "pooped"
     t.text     "comments"

@@ -1,25 +1,15 @@
 <p id="notice"><%= notice %></p>
-
-
   <strong>Start time:</strong>
-  <%= @event.start_time %>
-
-
+  <%= @event.start_time.strftime('%H:%M %p') %>
 
   <strong>End time:</strong>
-  <%= @event.end_time %>
-
-
+  <%= @event.end_time.strftime('%H:%M %p') %>
 
   <strong>Description:</strong>
   <%= @event.description %>
 
-
-
   <strong>Pooped:</strong>
   <%= @event.pooped %>
-
-
 
   <strong>Comments:</strong>
   <%= @event.comments %>

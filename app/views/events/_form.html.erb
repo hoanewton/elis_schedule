@@ -13,11 +13,11 @@
 
   <div class="field">
     <%= f.label :start_time %><br>
-    <%= f.datetime_select :start_time %>
+    <%= f.time_select :start_time, {ampm: true} %>
   </div>
   <div class="field">
     <%= f.label :end_time %><br>
-    <%= f.datetime_select :end_time %>
+    <%= f.time_select :end_time, {ampm: true} %>
   </div>
   <div class="field">
     <%= f.label :description %><br>
@@ -35,3 +35,9 @@
     <%= f.submit %>
   </div>
 <% end %>
+
+<!-- form_for @event do |f|
+  f.date_select :starts_at
+  f.time_select :starts_at, :ignore_date => true
+  f.submit
+end -->
